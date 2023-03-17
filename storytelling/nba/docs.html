@@ -1156,7 +1156,9 @@
                         </div>
                         <div class="elementor-element elementor-element-146c564 elementor-widget elementor-widget-text-editor" data-id="146c564" data-element_type="widget" data-widget_type="text-editor.default">
                             <div class="elementor-widget-container">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                                <p>La arquitectura acordada para la presentación consiste en emplear Looker Studio como herramienta para establecer y manipular la conexión a los datos, así como para la generación de gráficas. Para crear el tablero de control
+                                    que nos permita realizar una exploración de los datos que se han modelado, se realizó lo siguiente.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1170,7 +1172,7 @@
                                         <div class="elementskit-card active">
                                             <div class="elementskit-card-header" id="primaryHeading-0-8f15181">
                                                 <a href="#collapse-2c097b464127d53c91b0" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-2c097b464127d53c91b0" aria-expanded="true" aria-controls="Collapse-2c097b464127d53c91b0">
-                                                    <span class="ekit-accordion-title">A</span>
+                                                    <span class="ekit-accordion-title">Carga y actualización de datos</span>
                                                     <div class="ekit_accordion_icon_group">
                                                         <div class="ekit_accordion_normal_icon">
                                                             <!-- Normal Icon -->
@@ -1183,7 +1185,7 @@
                                             </div>
                                             <div id="Collapse-2c097b464127d53c91b0" class=" show collapse" aria-labelledby="primaryHeading-0-8f15181" data-parent="#accordion-64127d53c91b0">
                                                 <div class="elementskit-card-body ekit-accordion--content">
-                                                    <p>.</p>
+                                                    <p>Se cargó la base de datos procesada en formato .csv a través del conector de Hojas de cálculo de Google con el nombre shots_log_cleaned.csv</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1191,8 +1193,8 @@
 
                                         <div class="elementskit-card ">
                                             <div class="elementskit-card-header" id="primaryHeading-1-8f15181">
-                                                <a href="#collapse-88793e564127d53c91b0" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-88793e564127d53c91b0" aria-expanded="false" aria-controls="Collapse-88793e564127d53c91b0">
-                                                    <span class="ekit-accordion-title">B</span>
+                                                <a href="#collapse-88793e564127d53c91b1" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-88793e564127d53c91b1" aria-expanded="false" aria-controls="Collapse-88793e564127d53c91b1">
+                                                    <span class="ekit-accordion-title">Base de visualizaciones</span>
                                                     <div class="ekit_accordion_icon_group">
                                                         <div class="ekit_accordion_normal_icon">
                                                             <!-- Normal Icon -->
@@ -1203,9 +1205,10 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div id="Collapse-88793e564127d53c91b0" class=" collapse" aria-labelledby="primaryHeading-1-8f15181" data-parent="#accordion-64127d53c91b0">
+                                            <div id="Collapse-88793e564127d53c91b1" class=" collapse" aria-labelledby="primaryHeading-1-8f15181" data-parent="#accordion-64127d53c91b0">
                                                 <div class="elementskit-card-body ekit-accordion--content">
-                                                    <p>.
+                                                    <p>Se creó un nuevo informe en Looker Studio, se cargó la hoja de cálculo del paso 1. El informe se nombró Lanzamientos NBA 2016 - 2017. Este nombre es solo de referencia, pues como se explicará más adelante
+                                                        no se usará Looker Studio como capa de presentación final.
                                                     </p>
                                                 </div>
                                             </div>
@@ -1214,8 +1217,8 @@
 
                                         <div class="elementskit-card ">
                                             <div class="elementskit-card-header" id="primaryHeading-2-8f15181">
-                                                <a href="#collapse-3770b7264127d53c91b0" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-3770b7264127d53c91b0" aria-expanded="false" aria-controls="Collapse-3770b7264127d53c91b0">
-                                                    <span class="ekit-accordion-title">C</span>
+                                                <a href="#collapse-3770b7264127d53c91b2" class="ekit-accordion--toggler elementskit-btn-link collapsed" data-ekit-toggle="collapse" data-target="#Collapse-3770b7264127d53c91b2" aria-expanded="false" aria-controls="Collapse-3770b7264127d53c91b2">
+                                                    <span class="ekit-accordion-title">Ajustes de visualización</span>
                                                     <div class="ekit_accordion_icon_group">
                                                         <div class="ekit_accordion_normal_icon">
                                                             <!-- Normal Icon -->
@@ -1226,9 +1229,14 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div id="Collapse-3770b7264127d53c91b0" class=" collapse" aria-labelledby="primaryHeading-2-8f15181" data-parent="#accordion-64127d53c91b0">
+                                            <div id="Collapse-3770b7264127d53c91b2" class=" collapse" aria-labelledby="primaryHeading-2-8f15181" data-parent="#accordion-64127d53c91b0">
                                                 <div class="elementskit-card-body ekit-accordion--content">
-                                                    <p>.</p>
+                                                    <p>Se agregaron descripciones a cada variable de acuerdo a lo especificado en este documento. No fueron necesarios ajustes sobre los tipos de datos en Looker Studio para ninguna de las variables de la base
+                                                        cargada.
+                                                    </p>
+                                                    <p>A pesar de que Looker Studio puede usarse como capa final de interfaz de usuario se ha optado por una implementación a través de una página web empleando un diseño personalizado. A través del siguiente
+                                                        link es posible acceder a una vista preliminar de la implementación del diseño:
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
