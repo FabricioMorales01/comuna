@@ -1,0 +1,77 @@
+.modal {
+    display: none;
+    /* Ocultar el popup modal por defecto */
+    position: fixed;
+    /* Posición fija para que el popup modal aparezca en el centro de la pantalla */
+    z-index: 1;
+    /* Colocar el popup modal por encima del contenido de la página */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Permitir desplazamiento si el contenido es más grande que la pantalla */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo semitransparente oscuro */
+}
+
+.modal-content {
+    display: block;
+    /* Mostrar el contenido del popup modal */
+    margin: 15% auto;
+    /* Margen para centrar el contenido en la pantalla */
+    max-width: 80%;
+    /* Ancho máximo para el contenido */
+    max-height: 80%;
+    /* Altura máxima para el contenido */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.relevant-fact {
+    font-family: var( --e-global-typography-583e54c-font-family), Sans-serif;
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    height: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.progress-scored {
+    background-color: #86CB92;
+    height: 100%;
+    font-family: var( --e-global-typography-583e54c-font-family), Sans-serif;
+    font-weight: bold;
+    font-size: 20px !important;
+    text-align: center;
+}
+
+.progress-failed {
+    background-color: #F7B2BD;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: var( --e-global-typography-583e54c-font-family), Sans-serif;
+    font-weight: bold;
+    font-size: 20px !important;
+    text-align: center;
+}
