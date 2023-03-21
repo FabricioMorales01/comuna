@@ -8,28 +8,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 </head>
 <body>
+    <a href="#" onclick="playMiVidaEntera(event)" style="height: 100%;">
+        <img src="/public/iconplay.png" alt="icon">
+    </a>
     <script>
         var mividaenteraPlayed = false;
+
         window.soundMiVida = new window.Howl({
             src: ['/public/MoratMiVidaEntera.mp3'],
             volume: 1.0,
-            loop: true
+            loop: true,
+            autoplay: false,
+            onplay: function() {
+                mividaenteraPlayed = true;
+            }
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            playMiVidaEntera();
-        });
 
-        function playMiVidaEntera() {
+        function playMiVidaEntera(event) {
+            event.preventDefault();
             if(mividaenteraPlayed){
                 return;
             }
 
             window.soundMiVida.play();
-            mividaenteraPlayed = true;
         }
         
     </script>
-    Mi vida entera
 </body>
 </html>
