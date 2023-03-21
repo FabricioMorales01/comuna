@@ -8,11 +8,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 </head>
 <body>
-    <a href="#" onclick="playMiVidaEntera(event)" style="height: 100%;">
-        <img src="/public/iconplay.png" alt="icon">
+    <a href="#" onclick="playMiVidaEntera(event)" style="display: inline-block; width: 100%" id="myImage">
+        <img src="/public/iconplay.png" alt="icon" style="display: inline-block; width: 100%">
     </a>
     <script>
         var mividaenteraPlayed = false;
+        var myImage = document.getElementById('myImage');
 
         window.soundMiVida = new window.Howl({
             src: ['/public/MoratMiVidaEntera.mp3'],
