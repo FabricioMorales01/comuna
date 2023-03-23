@@ -6,9 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi vida entera</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+    <style>
+        /* Definimos el estilo base */
+        .parpadeo {
+        opacity: 1;
+        }
+
+        /* Creamos la animación */
+        @keyframes parpadeo {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.45;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+
+        /* Asignamos la animación a nuestro elemento */
+        .parpadeo {
+            animation: parpadeo 2s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body style="overflow: hidden;">
-    <a href="#" onclick="playMiVidaEntera(event)" style="display: inline-block; width: 100%" id="myImage">
+    <a href="#" onclick="playMiVidaEntera(event)" style="display: inline-block; width: 100%; opacity: 0.68;" id="myImage">
         <img id="playicon" src="/public/iconplay.png" alt="icon" style="display: inline-block; width: 100%">
         <img id="pauseicon" src="/public/iconpause.png" alt="icon" style="display: none; width: 100%">
     </a>
@@ -24,12 +48,9 @@
             loop: true,
             autoplay: false,
             onplay: function() {
-                if (!firstTime) {
-                    firstTime = true;
-                    mividaenteraPlayed = true;
-                    pauseicon.style.display = 'inline-block';
-                    playicon.style.display = 'none';
-                }
+                playicon.classList.remove('parpadeo');
+                pauseicon.style.display = 'inline-block';
+                playicon.style.display = 'none';
             }
         });
 
@@ -37,24 +58,17 @@
         function playMiVidaEntera(event) {
             event.preventDefault();
 
-            if (!firstTime) {
-                return;
-            }
-
-            if(mividaenteraPlayed){
+            if(!mividaenteraPlayed){
+                window.soundMiVida.play();
+                mividaenteraPlayed = true;
+                playicon.classList.add('parpadeo');
+            } else {
                 window.soundMiVida.pause();
                 mividaenteraPlayed = false;
                 playicon.style.display = 'inline-block';
                 pauseicon.style.display = 'none';
-            } else {
-                window.soundMiVida.play();
-                mividaenteraPlayed = true;
-                pauseicon.style.display = 'inline-block';
-                playicon.style.display = 'none';
             }
         }
-
-        window.soundMiVida.play();
     </script>
 </body>
 </html>
