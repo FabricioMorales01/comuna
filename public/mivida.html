@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi vida entera</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 </head>
-<body>
+<body style="overflow: hidden;">
     <a href="#" onclick="playMiVidaEntera(event)" style="display: inline-block; width: 100%" id="myImage">
-        <img src="/public/iconplay.png" alt="icon" style="display: inline-block; width: 100%">
+        <img id="playicon" src="/public/iconplay.png" alt="icon" style="display: inline-block; width: 100%">
+        <img id="pauseicon" src="/public/iconpause.png" alt="icon" style="display: none; width: 100%">
     </a>
     <script>
         var mividaenteraPlayed = false;
-        var myImage = document.getElementById('myImage');
+        var firstTime = false;
+        var playicon = document.getElementById('playicon');
+        var pauseicon = document.getElementById('pauseicon');
 
         window.soundMiVida = new window.Howl({
             src: ['/public/MoratMiVidaEntera.mp3'],
@@ -21,20 +24,37 @@
             loop: true,
             autoplay: false,
             onplay: function() {
-                mividaenteraPlayed = true;
+                if (!firstTime) {
+                    firstTime = true;
+                    mividaenteraPlayed = true;
+                    pauseicon.style.display = 'inline-block';
+                    playicon.style.display = 'none';
+                }
             }
         });
 
 
         function playMiVidaEntera(event) {
             event.preventDefault();
-            if(mividaenteraPlayed){
+
+            if (!firstTime) {
                 return;
             }
 
-            window.soundMiVida.play();
+            if(mividaenteraPlayed){
+                window.soundMiVida.pause();
+                mividaenteraPlayed = false;
+                playicon.style.display = 'inline-block';
+                pauseicon.style.display = 'none';
+            } else {
+                window.soundMiVida.play();
+                mividaenteraPlayed = true;
+                pauseicon.style.display = 'inline-block';
+                playicon.style.display = 'none';
+            }
         }
-        
+
+        window.soundMiVida.play();
     </script>
 </body>
 </html>
